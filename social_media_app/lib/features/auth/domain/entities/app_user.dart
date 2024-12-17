@@ -1,12 +1,12 @@
 class AppUser {
   final String uid;
   final String email;
-  final String password;
+  final String name;
 
   AppUser({
     required this.uid,
     required this.email,
-    required this.password,
+    required this.name,
   });
 
   // converts app user -> json
@@ -14,17 +14,17 @@ class AppUser {
     return {
       "uid": uid,
       "email": email,
-      "password:": password,
+      "name:": name,
     };
   }
 
   //converts json -> app user
-  //returns an existing instance from a cache
+  //factory: returns an existing instance from a cache
   factory AppUser.fromJson(Map<String, dynamic> jsonUser) {
     return AppUser(
       uid: jsonUser["uid"],
       email: jsonUser["email"],
-      password: jsonUser["password"],
+      name: jsonUser["name"],
     );
   }
 }
